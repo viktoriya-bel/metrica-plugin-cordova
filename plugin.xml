@@ -18,7 +18,7 @@
     <keywords>yandex appmetrica metrica analytics tracking ios android</keywords>
 
     <engines>
-        <engine name="cordova" version=">=3.3.0"/>
+        <engine name="cordova" version=">=6.0.0"/>
     </engines>
 
     <js-module src="www/appmetrica.js" name="appmetrica">
@@ -36,7 +36,8 @@
         <source-file src="platforms/android/com/yandex/metrica/plugin/cordova/AppMetricaPlugin.java"
                      target-dir="src/com/yandex/metrica/plugin/cordova" />
 
-        <framework src="platforms/android/build.gradle" custom="true" type="gradleReference" />
+        <preference name="ANDROID_APPMETRICA_VERSION" default="4.0.0" />
+        <framework src="com.yandex.android:mobmetricalib:$ANDROID_APPMETRICA_VERSION" />
     </platform>
 
     <platform name="ios">
