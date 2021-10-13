@@ -10,7 +10,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="yandex-appmetrica-plugin-cordova"
-        version="1.0.0">
+        version="1.0.0-unofficial-1">
     <name>AppMetrica</name>
     <description>Cordova/PhoneGap plugin for AppMetrica analytics tool</description>
     <author>Yandex, LLC</author>
@@ -18,7 +18,7 @@
     <keywords>yandex appmetrica metrica analytics tracking ios android</keywords>
 
     <engines>
-        <engine name="cordova" version=">=3.3.0"/>
+        <engine name="cordova" version=">=6.0.0"/>
     </engines>
 
     <js-module src="www/appmetrica.js" name="appmetrica">
@@ -36,7 +36,8 @@
         <source-file src="platforms/android/com/yandex/metrica/plugin/cordova/AppMetricaPlugin.java"
                      target-dir="src/com/yandex/metrica/plugin/cordova" />
 
-        <framework src="platforms/android/build.gradle" custom="true" type="gradleReference" />
+        <preference name="ANDROID_APPMETRICA_VERSION" default="4.0.0" />
+        <framework src="com.yandex.android:mobmetricalib:$ANDROID_APPMETRICA_VERSION" />
     </platform>
 
     <platform name="ios">
